@@ -1,3 +1,5 @@
+// ignore_for_file: equal_elements_in_set
+
 /**
  * Sets in Dart
  * - Sets are used to store unique values

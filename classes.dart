@@ -2,7 +2,7 @@
  * Classes in Dart
  * - Classes are used to create objects
  * - Classes are defined using the keyword class
- * - Classes can have state (attributes) and behaviour (methods)
+ * - Classes can have state (attributes) and behavior (methods)
  */
 
 void main() {
@@ -15,7 +15,7 @@ void main() {
   person.height = 5.11;
   person.isMarried = true;
 
-  // access the behaviour
+  // access the behavior
   person.printInfo();
 
   // create another object

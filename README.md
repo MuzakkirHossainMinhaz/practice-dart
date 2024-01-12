@@ -9,7 +9,7 @@
 
 ### Dart Syntax
 
--   **Whitespaces and Line Breaks :** Dart ignores spaces, tabs, and newlines.
+-   **Whitespace and Line Breaks :** Dart ignores spaces, tabs, and newlines.
 -   **Case Sensitivity :** Dart is case-sensitive. That means Dart differentiates between uppercase and lowercase letters. For example "Hello" and "hello" are not the same.
 -   **Comments :** Dart supports single-line and multi-line comments. Single-line comments start with "//" and end with a newline. Multi-line comments start with "/_" and end with "_/".
 -   **Statements end with a semicolon :** Each line of instruction is called a statement. Every statement must end with a semicolon (;).
@@ -237,7 +237,7 @@
 -   A `class` is a blueprint for creating objects. It defines the properties and behaviors that an object of that class will have.
 -   An `object` is an instance of a class. It contains the state and behavior of the class.
 
-    #### Dart Classes
+    #### Dart Classes and Objects
 
     -   A `class` can defined by using `class` keyword.
     -   A `class` can have `variables`, `functions`, and `objects`.
@@ -258,4 +258,76 @@
 
         person.printInfo(); // Print the name and age of the person
         ```
-    - The `this` keyword refers to the current instance of the class. If the parameter name and the name of the class's property are the same, hence to avoid confusion, it is recommended to use the `this` keyword in Dart.
+
+    -   The `this` keyword refers to the current instance of the class. If the parameter name and the name of the class's property are the same, hence to avoid confusion, it is recommended to use the `this` keyword in Dart.
+
+    #### Class in External File
+
+    -   A `class` can be defined in another file and imported in the main file.
+
+        ```dart
+        class Person {
+            String name;
+            int age;
+            void printInfo() {
+                print("Name: $name, Age: $age");
+            }
+        }
+        ```
+
+    -   The `Person` class is defined in another file and imported in the main file.
+
+        ```dart
+        import 'person.dart';
+
+        void main() {
+            Person person = new Person();
+            person.name = "John";
+            person.age = 30;
+            person.printInfo();
+        }
+        ```
+
+    #### Inheritance
+
+    -   A `class` can inherit the properties and methods of another class.
+    -   **Inheritance** is a mechanism in which one class acquires the properties and methods of another class.
+    -   The `extends` keyword is used to inherit the properties and methods from another class.
+    -   The `super` keyword is used to access the properties and methods of the parent class.
+    -   The `super` keyword is used to call the parent class's constructor.
+
+        ```dart
+        // Parent class
+        class Person {
+            String name;
+            int age;
+            void printInfo() {
+                print("Name: $name, Age: $age");
+            }
+        }
+
+        // Child class
+        class Employee extends Person {
+        String department;
+            // Constructor
+            Employee(String name, int age, String department) {
+                this.name = name;
+                this.age = age;
+                this.department = department;
+            }
+            // Override the `printInfo()` method
+            @override
+            void printInfo() {
+                super.printInfo();
+                print("Department: $department");
+            }
+        }
+
+        // Main class
+        void main() {
+            Employee employee = new Employee("John", 30, "IT");
+            employee.printInfo();
+        }
+        ```
+    
+

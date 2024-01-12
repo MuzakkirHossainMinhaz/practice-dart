@@ -1,3 +1,5 @@
+// ignore_for_file: equal_elements_in_set
+
 /**
  * for-in and forEach in Dart
  */
